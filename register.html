@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jodi Match – रजिस्ट्रेशन</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:24px 14px;background:#fff7fb;color:#2b2027;font-family:system-ui,'Noto Sans Devanagari',sans-serif}
+.wrap{max-width:520px;margin:18px auto;background:#fff;border:1px solid #f0dce6;border-radius:20px;padding:25px;box-shadow:0 10px 30px #6c244012}
+.brand{text-align:center;color:#8b245d;font-weight:900;font-size:25px}h1{text-align:center;font-size:25px;margin:8px 0}.sub{text-align:center;color:#756873;font-size:14px;line-height:1.6;margin-bottom:22px}
+label{display:block;font-weight:700;font-size:14px;margin:15px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid #dfcbd5;border-radius:11px;font:inherit;background:#fff}textarea{min-height:85px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;margin:18px 0}.check input{width:auto;margin-top:4px}
+button{width:100%;border:0;border-radius:30px;background:#8b245d;color:#fff;padding:14px;font-size:16px;font-weight:800}
+.note{background:#fff0f6;border:1px solid #f0cfdf;color:#6f294c;border-radius:12px;padding:12px;font-size:12px;line-height:1.6;margin-top:16px}
+.back{display:block;text-align:center;margin-top:18px;color:#8b245d;text-decoration:none;font-weight:700}
+@media(max-width:420px){.row{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="wrap">
+<div class="brand">💗 Jodi Match</div>
+<h1>अपनी प्रोफाइल बनाएँ</h1>
+<div class="sub">शुरुआत करने के लिए नीचे अपनी जानकारी भरें। यह अभी केवल डेमो फॉर्म है।</div>
+<form id="regForm">
+<label for="name">आपका नाम</label>
+<input id="name" name="name" placeholder="अपना नाम लिखें" required maxlength="50">
+<div class="row">
+<div><label for="age">उम्र</label><input id="age" name="age" type="number" min="18" max="100" placeholder="18 या उससे अधिक" required></div>
+<div><label for="gender">जेंडर</label><select id="gender" name="gender" required><option value="">चुनें</option><option>पुरुष</option><option>महिला</option><option>अन्य</option></select></div>
+</div>
+<label for="city">शहर</label>
+<input id="city" name="city" placeholder="अपना शहर लिखें" required maxlength="60">
+<label for="about">अपने बारे में (वैकल्पिक)</label>
+<textarea id="about" name="about" maxlength="300" placeholder="अपनी रुचियाँ या पसंद लिखें"></textarea>
+<label class="check"><input type="checkbox" id="adult" required><span>मैं पुष्टि करता/करती हूँ कि मेरी उम्र 18 वर्ष या उससे अधिक है।</span></label>
+<label class="check"><input type="checkbox" id="terms" required><span>मैं समझता/समझती हूँ कि यह डेमो फॉर्म है और मेरी जानकारी अभी किसी सर्वर पर सेव नहीं होगी।</span></label>
+<button type="submit">डेमो रजिस्ट्रेशन</button>
+</form>
+<div class="note"><b>ज़रूरी:</b> अभी यह फॉर्म केवल डिजाइन और अभ्यास के लिए है। इसमें असली अकाउंट नहीं बनेगा और जानकारी सेव नहीं होगी। लाइव करने से पहले सुरक्षित लॉगिन, डेटाबेस, गोपनीयता नीति और रिपोर्ट/ब्लॉक सुविधा जोड़नी होगी।</div>
+<a class="back" href="index.html">← होमपेज पर वापस जाएँ</a>
+</div>
+<script>
+document.getElementById('regForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const age=Number(document.getElementById('age').value);
+ if(age<18){alert('Jodi Match केवल 18 वर्ष या उससे अधिक उम्र के लोगों के लिए है।');return;}
+ alert('डेमो फॉर्म सही भरा गया है! अभी अकाउंट नहीं बना है और जानकारी सेव नहीं हुई है। अगले चरण में सुरक्षित सेव करने की सुविधा जोड़ेंगे।');
+});
+</script>
+</body></html>
